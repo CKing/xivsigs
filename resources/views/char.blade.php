@@ -75,7 +75,7 @@
 							<td>{{ $data->classjobs["rouge.level"] or 0 }}</td>
 							<td>{{ $data->classjobs["thaumaturge.level"] or 0 }}</td>
 							<td>{{ $data->classjobs["arcanist.level"] or 0 }}</td>
-							<td>{{ $data->classjobs["conjourer.level"] or 0 }}</td>
+							<td>{{ $data->classjobs["conjurer.level"] or 0 }}</td>
 						</tr>
 						<tr>
 							<td><img src="/images/carpenter.png"></td>
