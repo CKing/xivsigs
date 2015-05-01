@@ -95,7 +95,7 @@ class PagesController extends Controller {
 			"goldsmith" => [240, 130],
 			"leatherworker" => [268, 130],
 			"weaver" => [296, 130],
-			"achlemist" => [324, 130],
+			"alchemist" => [324, 130],
 			"culinarian" => [352, 130],
 			"miner" => [382, 130],
 			"botanist" => [410, 130],
