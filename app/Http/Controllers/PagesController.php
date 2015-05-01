@@ -105,24 +105,24 @@ class PagesController extends Controller {
 		$img = Image::cache(function ($img) use($data, $coords) {
 			$avatar = Image::make($data->avatar)->resize(128, 128);
 			$city = Image::make($data->cityIcon)->resize(48, 48);
-			$img->make(storage_path("app/template.png"))
-			//$img = Image::make(storage_path("app/template.png"))
+			$img->make(app_path("resources/banner/template.png"))
+			//$img = Image::make(app_path("resources/banner/template.png"))
 				->insert($avatar, "left", 7, 0)
 				->insert($city, null, 150, 42)
 				->text($data->name . (!empty($data->freeCompany)? " - " . $data->freeCompany: ""), 154, 32, function ($c) {
-					$c->file(storage_path("app/noto-b.ttf"));
+					$c->file(app_path("resources/banner/noto-b.ttf"));
 					$c->size(16);
 				})
 				->text($data->race . "\n" . $data->clan, 500, 53, function ($c) {
-					$c->file(storage_path("app/noto.ttf"));
+					$c->file(app_path("resources/banner/noto.ttf"));
 					$c->size(12);
 				})
 				->text($data->grandCompany . "\n" . $data->grandCompanyRank, 500, 90, function ($c) {
-					$c->file(storage_path("app/noto.ttf"));
+					$c->file(app_path("resources/banner/noto.ttf"));
 					$c->size(12);
 				})
 				->text($data->world, 500, 130, function ($c) {
-					$c->file(storage_path("app/noto.ttf"));
+					$c->file(app_path("resources/banner/noto.ttf"));
 					$c->size(12);
 				})
 			;
@@ -133,7 +133,7 @@ class PagesController extends Controller {
 					$level = $data->classjobs[$class]["level"];
 				}
 				$img->text($level, $pos[0], $pos[1], function ($c) {
-					$c->file(storage_path("app/noto.ttf"));
+					$c->file(app_path("resources/banner/noto.ttf"));
 					$c->size(10);
 				});
 			}
