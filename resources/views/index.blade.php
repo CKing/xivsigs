@@ -2,7 +2,7 @@
 
 @section("content")
 	<h1 class="page-header">XIV Sigs</h1>
-	
+
 	<p>
 		Erstelle deine eigene Final Fantasy XIV Signatur!<br>
 		Einfach Formular ausfüllen und dann den Code kopieren.
@@ -46,9 +46,13 @@
 
 			$r.slideUp().find(".char").remove();
 			$.get("{{ route("ajax.lodestone") }}", { world: $world.val(), name: $name.val() }, function (results) {
-				results.forEach(function (result) {
-					$r.append($r.data("template")(result))
-				})
+				if (Array.isArray(results)) {
+					results.forEach(function (result) {
+						$r.append($r.data("template")(result))
+					})
+				} else {
+					$r.append($r.data("template")(results));
+				}
 
 				$r.slideDown();
 				$button.prop("disabled", false);
